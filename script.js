@@ -9,7 +9,9 @@ form.email.addEventListener('change', function() {
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    validatePassword(this);
+    if (validateEmail(form.email) && validatePassword(form.password)) {
+        form.submit();
+    }
   });
 
 // maintenant plae a la modification du password
